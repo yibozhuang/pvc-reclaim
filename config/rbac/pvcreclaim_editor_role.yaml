@@ -1,0 +1,24 @@
+# permissions for end users to edit pvcreclaims.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: pvcreclaim-editor-role
+rules:
+- apiGroups:
+  - yibozhuang.me
+  resources:
+  - pvcreclaims
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - yibozhuang.me
+  resources:
+  - pvcreclaims/status
+  verbs:
+  - get
